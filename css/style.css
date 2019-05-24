@@ -1,0 +1,108 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.header {
+  height: 100vh;
+  background-image: url("../img/hero.jpg");
+  background-size: cover; }
+  .header__wrapper {
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+  .header__title {
+    width: 750px;
+    font-family: "Merriweather", serif;
+    font-size: 55px;
+    color: #FFFFFF;
+    font-weight: 400;
+    border: 1px solid #595959;
+    padding: 50px 0;
+    text-align: center; }
+    .header__title--highlight {
+      color: #e79f3d; }
+
+.navigation__list {
+  list-style: none;
+  display: flex;
+  margin-top: 41px; }
+
+.navigation__item {
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  border-right: 1px solid #e79f3d;
+  padding: 0 12px; }
+  .navigation__item a {
+    text-decoration: none; }
+    .navigation__item a:visited, .navigation__item a:link {
+      color: #FFFFFF; }
+  .navigation__item:last-child {
+    border: none; }
+
+.navigation::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/arrow.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 150px;
+  left: calc(50% - 16px); }
+
+.hero-footer {
+  width: 100%;
+  padding: 0 15%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .hero-footer a {
+    text-decoration: none;
+    top: 30px; }
+  .hero-footer__logo {
+    display: block;
+    text-align: center;
+    line-height: 41px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #e79f3d;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px; }
+    .hero-footer__logo:link, .hero-footer__logo:active, .hero-footer__logo:visited {
+      color: #e79f3d; }
+  .hero-footer__contact {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase; }
+    .hero-footer__contact:link, .hero-footer__contact:active, .hero-footer__contact:visited {
+      color: #FFFFFF; }
+    .hero-footer__contact::after {
+      content: "→";
+      display: inline-block;
+      color: #e79f3d;
+      padding-left: 10px; }
+
+.fixed {
+  position: fixed;
+  top: 0; }
+  .fixed::after {
+    display: none; }
+
+.link_fixed {
+  position: fixed;
+  top: 0;
+  margin-top: 11px;
+  right: 15%; }
+
+.main-content {
+  height: 1000px;
+  background-color: #595959; }

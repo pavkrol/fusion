@@ -7,6 +7,13 @@
   box-sizing: border-box;
 }
 
+a, button {
+  text-decoration: none;
+  background: none;
+  color: inherit;
+  border: none;
+}
+
 .header {
   height: 100vh;
   background-image: url("../img/hero.jpg");
@@ -34,6 +41,7 @@
 }
 
 .navigation {
+  z-index: 2;
   &__list {
     list-style: none;
     display: flex;
@@ -41,15 +49,18 @@
   }
 
   &__item {
-    font-family: $nav_font;
+    font-family: $sec_font;
     font-size: 13px;
     text-transform: uppercase;
     border-right: 1px solid $sec_color;
     padding: 0 12px;
     a {
-      text-decoration: none;
-      &:visited, &:link {
+      transition: all 0.2s ease-in;
+      &:visited, &:active, &:link {
         color: $base_color;
+      }
+      &:hover {
+        color: $sec_color;
       }
     }
     &:last-child {
@@ -80,11 +91,11 @@
   align-items: center;
   justify-content: space-between;
   a {
-    text-decoration: none;
     top: 30px;
   }
 
   &__logo {
+    z-index: 2;
     display: block;
     text-align: center;
     line-height: 41px;
@@ -92,19 +103,29 @@
     height: 45px;
     border-radius: 50%;
     border: 2px solid $sec_color;
-    font-family: $nav_font;
+    font-family: $sec_font;
     font-size: 20px;
+    transition: all 0.2s ease-in;
     &:link, &:active, &:visited {
       color: $sec_color;
+    }
+    &:hover {
+      color: $base_color;
+      border-color: $base_color;
     }
   }
 
   &__contact {
+    z-index: 2;
     font-family: $link_font;
     font-size: 14px;
     text-transform: uppercase;
+    transition: all 0.2s ease-in;
     &:link, &:active, &:visited {
       color: $base_color;
+    }
+    &:hover {
+      color: $sec_color;
     }
     &::after {
       content: "→";
@@ -130,7 +151,222 @@
   right: 15%;
 }
 
-.main-content {
-  height: 1000px;
-  background-color: #595959;
+.services {
+  min-height: 825px;
+  background-color: $back_bright;
+  padding: 125px 15%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 60px 140px 1fr;
+  position: relative;
+  &__title {
+    grid-column: 1 / 4;
+    justify-self: center;
+    align-self: center;
+    font-family: $link_font;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $sec_color;
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 125px;
+      position: absolute;
+      top: -147px;
+      left: 50%;
+      background-color: $sec_color;
+    }
+  }
+  &__description {
+    grid-column: 1 / 4;
+    justify-self: center;
+    align-self: center;
+    font-family: $main_font;
+    color: $base_color;
+    font-size: 40px;
+    font-weight: 400;
+    padding: 0 20%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  &__details {
+    position: absolute;
+    height: 100%;
+    width: 70%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-200%);
+    transition: all .5s ease-in-out;
+  }
+
+  .details {
+    background-color: $back_bright;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    &__wrapper {
+      grid-column: 1 / 2;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-image: url(../img/services_details_bgd.jpg);
+      background-size: cover;
+      background-position: right;
+      padding-top: 150px;
+      &__title {
+        display: block;
+        width: 200px;
+        height: 75px;
+        color: $dark_font;
+        background-color: $base_color;
+        font-family: $main_font;
+        font-size: 30px;
+        text-align: center;
+        line-height: 75px;
+        align-self: flex-end;
+      }
+      &__hide {
+        width: 40px;
+        height: 40px;
+        background-image: url(../img/arrow_hide.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0 0 25px 25px;
+        cursor: pointer;
+      }
+    }
+    &__aside {
+      grid-column: 2 / 3;
+    }
+
+    .aside {
+      padding-left: 45px;
+      font-family: $sec_font;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      &__subtitle {
+        padding-top: 150px;
+        color: $base_color;
+        font-size: 17px;
+        text-transform: uppercase;
+        margin-bottom: 35px;
+        letter-spacing: 1px;
+        font-weight: 600;
+      }
+  
+      &__description {
+        color: $desc_color;
+        font-size: 14px;
+        line-height: 27px;
+        margin-bottom: 30px;
+        padding-right: 30%;
+      }
+  
+      &__awards {
+        color: $base_color;
+        font-size: 15px;
+        font-weight: 600;
+        display: flex;
+        flex-wrap: wrap;
+        h5 {
+          flex-basis: 40%;
+          padding-left: 25px;
+          height: 50px;
+          position: relative;
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            display: block;
+            background-position: left;
+            background-repeat: no-repeat;
+          }
+        &:nth-child(1):before {
+          background-image: url(../img/strategist_icon.png);
+        }
+        &:nth-child(2):before {
+          background-image: url(../img/research_icon.png);
+        }
+        &:nth-child(3):before {
+          background-image: url(../img/planning_icon.png);
+        }
+        &:nth-child(4):before {
+          background-image: url(../img/trusted_icon.png);
+        }
+        }
+      }
+  
+      &__contact {
+        display: block;
+        color: $dark_font;
+        width: 220px;
+        height: 60px;
+        background-color: $sec_color;
+        text-align: center;
+        line-height: 60px;
+        font-size: 17px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: $base_color;
+    padding-left: 25%;
+    &__icon {
+      width: 21px;
+    }
+    &__title {
+      font-family: $main_font;
+      font-size: 30px;
+      font-weight: 400;
+    }
+    &__description {
+      font-family: $sec_font;
+      font-size: 14px;
+      color: $desc_color;
+      padding-right: 25%;
+      line-height: 28px;
+    }
+    &__link {
+      font-family: $sec_font;
+      font-size: 14px;
+      text-transform: uppercase;
+      max-width: 120px;
+      text-align: left;
+      cursor: pointer;
+      &:hover {
+        color: $sec_color;
+      }
+      &::after {
+        content: "→";
+        display: inline-block;
+        color: $sec_color;
+        padding-left: 10px;
+      }
+    }
+  }
 }
+
+.expand {
+  transform: translateX(-50%);
+}
+
+.branding {
+  height: 1000px;
+  background-color: $back_dark;
+}
+
+
+

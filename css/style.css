@@ -33,7 +33,7 @@ a, button {
       color: #e79f3d; }
 
 .navigation {
-  z-index: 2; }
+  z-index: 3; }
   .navigation__list {
     list-style: none;
     display: flex;
@@ -75,7 +75,7 @@ a, button {
   .hero-footer a {
     top: 30px; }
   .hero-footer__logo {
-    z-index: 2;
+    z-index: 3;
     display: block;
     text-align: center;
     line-height: 41px;
@@ -92,7 +92,7 @@ a, button {
       color: #FFFFFF;
       border-color: #FFFFFF; }
   .hero-footer__contact {
-    z-index: 2;
+    z-index: 3;
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     text-transform: uppercase;
@@ -159,7 +159,7 @@ a, button {
     text-align: center;
     margin-bottom: 30px; }
   .services__details {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 70%;
     left: 50%;
@@ -167,6 +167,7 @@ a, button {
     transform: translateX(-200%);
     transition: all .5s ease-in-out; }
   .services .details {
+    z-index: 3;
     background-color: #202020;
     display: grid;
     grid-template-columns: 45% 55%; }
@@ -215,6 +216,14 @@ a, button {
         margin-bottom: 35px;
         letter-spacing: 1px;
         font-weight: 600; }
+        .services .details .aside__subtitle::before {
+          content: "";
+          display: block;
+          width: 2px;
+          height: 125px;
+          position: absolute;
+          top: 0;
+          background-color: #e79f3d; }
       .services .details .aside__description {
         color: #bbbbbb;
         font-size: 14px;
@@ -259,6 +268,10 @@ a, button {
         line-height: 60px;
         font-size: 17px;
         text-transform: uppercase; }
+        .services .details .aside__contact:hover {
+          background-color: #232323;
+          color: #e79f3d;
+          border: 2px solid #e79f3d; }
   .services .box {
     display: flex;
     flex-direction: column;
@@ -295,6 +308,77 @@ a, button {
 .expand {
   transform: translateX(-50%); }
 
-.branding {
-  height: 1000px;
-  background-color: #181818; }
+.portfolio {
+  min-height: 950px;
+  padding: 145px 15%;
+  background-color: #181818;
+  display: flex;
+  flex-direction: column;
+  background-image: url(../img/project_one.jpg);
+  background-position: center 145px;
+  background-repeat: no-repeat;
+  background-size: 47% calc(100% - 340px); }
+  .portfolio__title {
+    position: relative;
+    text-transform: uppercase;
+    color: #e79f3d;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .1em;
+    margin-top: 145px; }
+    .portfolio__title:before {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 125px;
+      position: absolute;
+      top: -145px;
+      background-color: #e79f3d; }
+  .portfolio__subtitle {
+    font-family: "Merriweather", serif;
+    font-size: 55px;
+    color: #FFFFFF;
+    font-weight: 400;
+    padding-top: 15px;
+    flex: 1; }
+  .portfolio__button {
+    font-family: "Open Sans", sans-serif;
+    color: #FFFFFF;
+    font-size: 14px;
+    text-transform: uppercase;
+    width: 150px;
+    text-align: left;
+    cursor: pointer;
+    align-self: flex-end;
+    padding-bottom: 15px; }
+    .portfolio__button:hover {
+      color: #e79f3d; }
+    .portfolio__button::after {
+      content: "→";
+      display: inline-block;
+      color: #e79f3d;
+      padding-left: 10px; }
+    .portfolio__button:last-of-type {
+      margin-bottom: 150px;
+      position: relative; }
+      .portfolio__button:last-of-type:before {
+        content: "";
+        display: block;
+        width: 2px;
+        height: 150px;
+        position: absolute;
+        background-color: #e79f3d;
+        top: 33.8px; }
+  .portfolio__pagination {
+    height: 50px; }
+  .portfolio .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; }
+    .portfolio .pagination__dot {
+      width: 35px;
+      height: 2px;
+      margin: 0 25px;
+      background-color: #e79f3d;
+      cursor: pointer; }

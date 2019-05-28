@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Fusion | We build things for human</title>
-  <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans|Roboto&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans|Roboto&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="./css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -31,7 +32,7 @@
     <section class="services">
       <h2 class="services__title">our services</h2>
       <p class="services__description">Our team will take your business presence to new level</p>
-      <div class="services__box box">
+      <div class="services__box box" data-aos="zoom-in" data-aos-once="true">
         <img class="box__icon" src="./img/strategy_icon.png" alt="" aria-hidden="true">
         <h2 class="box__title">Strategy.</h2>
         <p class="box__description">Ship it user story iterate engaging co-working intuitive pitch deck hacker prototype SpaceTeam user centered design big data.</p>
@@ -55,24 +56,36 @@
           <a href="" class="aside__contact">Get in touch &#8594;</a>
         </div>
       </div>
-      <div class="services__box box">
+      <div class="services__box box" data-aos="zoom-in" data-aos-once="true">
         <img class="box__icon" src="./img/branding_icon.png" alt="" aria-hidden="true">
         <h2 class="box__title">Branding.</h2>
         <p class="box__description">Ship it user story iterate engaging co-working intuitive pitch deck hacker prototype SpaceTeam user centered design big data.</p>
         <button class="box__link">see details</button>
       </div>
-      <div class="services__box box">
+      <div class="services__box box" data-aos="zoom-in" data-aos-once="true">
         <img class="box__icon" src="./img/design_icon.png" alt="" aria-hidden="true">
         <h2 class="box__title">Design.</h2>
         <p class="box__description">Ship it user story iterate engaging co-working intuitive pitch deck hacker prototype SpaceTeam user centered design big data.</p>
         <button class="box__link">see details</button>
       </div>
     </section>
-    <section class="branding">
-
+    <section class="portfolio">
+      <h2 class="portfolio__title">Branding & design</h2>
+      <h3 class="portfolio__subtitle">Project One</h3>
+      <button class="portfolio__button">Project details</button>
+      <button class="portfolio__button">View slides</button>
+      <div class="portfolio__pagination pagination">
+        <button class="pagination__dot"></button>
+        <button class="pagination__dot"></button>
+        <button class="pagination__dot"></button>
+        <button class="pagination__dot"></button>
+        <button class="pagination__dot"></button>
+      </div>
     </section>
   </main>
 </body>
-<script src="./scripts/fixed_footer.js"></script>
-<script src="./scripts/services.js"></script>
+  <script src="./scripts/fixed_footer.js"></script>
+  <script src="./scripts/services.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </html>

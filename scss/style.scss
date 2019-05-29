@@ -384,7 +384,6 @@ a, button {
   background-color: $back_dark;
   display: flex;
   flex-direction: column;
-  background-image: url(../img/project_one.jpg);
   background-position: center 145px;
   background-repeat: no-repeat;
   background-size: 47% calc(100% - 340px);
@@ -459,10 +458,28 @@ a, button {
       width: 35px;
       height: 2px;
       margin: 0 25px;
-      background-color: $sec_color;
+      background-color: #5c5c5c;
       cursor: pointer;
     }
+    .active {
+      background-color: $sec_color;
+    }
   }
+}
+.portfolio[data-number="1"] {
+  background-image: url(../img/project_1.jpg);
+}
+.portfolio[data-number="2"] {
+  background-image: url(../img/project_2.jpg);
+}
+.portfolio[data-number="3"] {
+  background-image: url(../img/project_3.jpg);
+}
+.portfolio[data-number="4"] {
+  background-image: url(../img/project_4.jpg);
+}
+.portfolio[data-number="5"] {
+  background-image: url(../img/project_5.jpg);
 }
 
 

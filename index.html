@@ -70,16 +70,57 @@
       </div>
     </section>
     <section id="portfolio" class="portfolio" data-number="1">
+      <img class="portfolio__slide slide__active" src="./img/project_1.jpg" data-number="0"/>
+      <img class="portfolio__slide" src="./img/project_2.jpg" data-number="1"/>
+      <img class="portfolio__slide" src="./img/project_3.jpg" data-number="2"/>
+      <img class="portfolio__slide" src="./img/project_4.jpg" data-number="3"/>
+      <img class="portfolio__slide" src="./img/project_5.jpg" data-number="4"/>
       <h2 class="portfolio__title">Branding & design</h2>
       <h3 id="slide_title" class="portfolio__subtitle">Project One</h3>
-      <button class="portfolio__button">Project details</button>
-      <button class="portfolio__button">View slides</button>
+      <button id="project-details-btn" class="portfolio__button">Project details</button>
+      <button id="project-slideshow-btn" class="portfolio__button">View slides</button>
       <div class="portfolio__pagination pagination">
-        <button class="pagination__dot active" data-number="1"></button>
+        <button class="pagination__dot active" data-number="0"></button>
+        <button class="pagination__dot" data-number="1"></button>
         <button class="pagination__dot" data-number="2"></button>
         <button class="pagination__dot" data-number="3"></button>
         <button class="pagination__dot" data-number="4"></button>
-        <button class="pagination__dot" data-number="5"></button>
+      </div>
+      <div id="project-details" class="portfolio__details details">
+        <div class="details__wrapper-left">
+          <h2 id="details-title" class="details__title">Project One</h3>
+          <h3 class="details__subtitle">Branding & design <span>|</span> March 2016</h3>
+          <p class="details__description">Having a baby can be a nerve wracking experience for new parents – not the nine months of pregnancy, I’m talking about after the infant is brought home from the hospital. It’s always the same thing, by the time they have their third child they have it all figured out, but with number one it’s a learning thing.</p>
+          <p class="details__description">Baby monitors help you hear your baby’s needs without you having to be in the room with the baby. Some baby monitors are portable, or “mobile” and are small enough that you can carry it in your pocket as you do your daily chores around the house. Depending on your price range it’s best to have a base unit that plugs into the wall. The receiving unit can be like your portable phone, you can carry it around with you, and plug it back into the base unit to be recharged.</p>
+          <button id="hide-details-show-slideshow" class="details__slideshow">See the project</button>
+        </div>
+        <div class="details__wrapper-right">
+            <img class="details__image details__image--active" src="./img/project_1.jpg" />
+            <img class="details__image" src="./img/project_2.jpg" />
+            <img class="details__image" src="./img/project_3.jpg" />
+            <img class="details__image" src="./img/project_4.jpg" />
+            <img class="details__image" src="./img/project_5.jpg" />
+        </div>
+        <button id="project-details-hide" class="details__return">Back to portfolio</button>
+      </div>
+      <div id="slideshow" class="portfolio__slideshow slideshow">
+        <div class="slideshow__wrapper">
+          <button id="slideshow__btn--previous" class="slideshow__btn slideshow__btn--previous"></button>
+          <button id="slideshow__btn--next" class="slideshow__btn slideshow__btn--next"></button>
+          <img class="slideshow__image slideshow__image--active" src="./img/project_1.jpg" />
+          <img class="slideshow__image" src="./img/project_2.jpg" />
+          <img class="slideshow__image" src="./img/project_3.jpg" />
+          <img class="slideshow__image" src="./img/project_4.jpg" />
+          <img class="slideshow__image" src="./img/project_5.jpg" />
+        </div>
+        <button id="hide-slideshow" class="slideshow__return">Back to portfolio</button>
+        <div class="slideshow__pagination pagination">
+          <button class="pagination__dot2 active" data-number="0"></button>
+          <button class="pagination__dot2" data-number="1"></button>
+          <button class="pagination__dot2" data-number="2"></button>
+          <button class="pagination__dot2" data-number="3"></button>
+          <button class="pagination__dot2" data-number="4"></button>
+        </div>
       </div>
     </section>
   </main>

@@ -683,5 +683,94 @@ a, button {
     .testimonials .dots__item.active {
       background-color: #e79f3d; }
 
+.team {
+  min-height: 1100px;
+  background-color: #181818;
+  padding: 125px 15% 110px 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .team__title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #e79f3d;
+    height: 40px;
+    line-height: 40px;
+    position: relative; }
+    .team__title::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color: #e79f3d;
+      width: 2px;
+      height: 125px;
+      top: -125px;
+      left: 50%; }
+  .team__subtitle {
+    font-family: "Merriweather", serif;
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 65px;
+    padding: 0 20%;
+    text-align: center; }
+  .team__member {
+    width: 285px;
+    height: 315px;
+    position: relative;
+    background-color: #181818; }
+  .team .member {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center; }
+    .team .member:hover .member__photo {
+      margin-top: 0;
+      width: 45px;
+      height: 45px; }
+    .team .member:hover .member__name {
+      height: 25px;
+      transform: rotate(90deg);
+      margin: 0; }
+    .team .member:hover .member__position {
+      height: 25px;
+      transform: rotate(90deg); }
+    .team .member__photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 60px;
+      margin-top: 45px;
+      transition: all 0.4s ease-in; }
+    .team .member__name {
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #e79f3d;
+      height: 35px;
+      line-height: 35px;
+      margin-top: 20px; }
+    .team .member__position {
+      color: #FFFFFF;
+      font-family: "Open Sans", sans-serif;
+      font-size: 13px;
+      height: 35px;
+      line-height: 35px;
+      font-weight: 400;
+      text-align: center; }
+    .team .member__description {
+      font-family: "Open Sans", sans-serif;
+      font-size: 13px;
+      color: #bbbbbb;
+      line-height: 25px;
+      position: absolute;
+      width: 210px;
+      height: 100%;
+      transform: translateX(285px); }
+
 .expand {
   transform: translateX(-50%); }

@@ -716,52 +716,66 @@ a, button {
     font-weight: 400;
     line-height: 65px;
     padding: 0 20%;
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 40px; }
+  .team__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
   .team__member {
+    position: relative;
     width: 285px;
     height: 315px;
-    position: relative;
     background-color: #181818; }
   .team .member {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    align-items: center; }
+    overflow: hidden; }
     .team .member:hover .member__photo {
-      margin-top: 0;
-      width: 45px;
-      height: 45px; }
-    .team .member:hover .member__name {
-      height: 25px;
-      transform: rotate(90deg);
-      margin: 0; }
-    .team .member:hover .member__position {
-      height: 25px;
-      transform: rotate(90deg); }
+      width: 55px;
+      height: 55px;
+      transform: translate(-75px, -37.5px); }
+    .team .member:hover .member__wrapper {
+      transform: translate(-110px, -40px) rotate(90deg); }
+    .team .member:hover .member__description {
+      transform: translateX(75px); }
+    .team .member:hover:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 75px;
+      height: 75px;
+      border-left: 1px solid #e79f3d;
+      border-top: 1px solid #e79f3d; }
     .team .member__photo {
+      position: absolute;
+      top: 45px;
+      left: 82.5px;
       width: 120px;
       height: 120px;
       border-radius: 60px;
-      margin-top: 45px;
-      transition: all 0.4s ease-in; }
-    .team .member__name {
+      transition: all 0.3s ease-in; }
+    .team .member__wrapper {
+      position: absolute;
+      width: 195px;
+      top: 185px;
+      left: 45px;
+      transition: all 0.3s ease-in;
+      text-align: center; }
+    .team .member__wrapper h4 {
       font-family: "Open Sans", sans-serif;
       font-size: 14px;
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: #e79f3d;
-      height: 35px;
-      line-height: 35px;
-      margin-top: 20px; }
-    .team .member__position {
+      height: 22.5px;
+      line-height: 22.5px; }
+    .team .member__wrapper h5 {
       color: #FFFFFF;
       font-family: "Open Sans", sans-serif;
       font-size: 13px;
-      height: 35px;
-      line-height: 35px;
-      font-weight: 400;
-      text-align: center; }
+      height: 22.5px;
+      line-height: 22.5px;
+      font-weight: 400; }
     .team .member__description {
       font-family: "Open Sans", sans-serif;
       font-size: 13px;
@@ -770,7 +784,114 @@ a, button {
       position: absolute;
       width: 210px;
       height: 100%;
-      transform: translateX(285px); }
+      padding: 10px 10px 0 10px;
+      transform: translateX(285px);
+      transition: all 0.4s ease-in; }
+    .team .member:nth-of-type(1), .team .member:nth-of-type(2), .team .member:nth-of-type(4), .team .member:nth-of-type(5) {
+      border-right: 1px solid #202020;
+      border-bottom: 1px solid #202020; }
+    .team .member:nth-of-type(3), .team .member:nth-of-type(6) {
+      border-bottom: 1px solid #202020; }
+    .team .member:nth-of-type(7) {
+      border-right: 1px solid #202020; }
+
+.contact {
+  min-height: 900px;
+  background-color: #343434;
+  padding: 125px 15% 110px 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .contact__title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #e79f3d;
+    height: 40px;
+    line-height: 40px;
+    position: relative; }
+    .contact__title::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color: #e79f3d;
+      width: 2px;
+      height: 125px;
+      top: -125px;
+      left: 50%; }
+  .contact__subtitle {
+    font-family: "Merriweather", serif;
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 30px 0 90px 0; }
+  .contact__form {
+    min-height: 500px;
+    max-width: 750px; }
+  .contact .form {
+    background-color: #181818;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 50px 20px;
+    box-shadow: 3px 4px 15px 0px rgba(0, 0, 0, 0.3); }
+    .contact .form__item {
+      flex-basis: 50%;
+      height: 60px;
+      padding: 0 40px;
+      margin-bottom: 70px;
+      position: relative; }
+      .contact .form__item input {
+        background: transparent;
+        border: none;
+        border-bottom: #5c5c5c 1px solid;
+        width: 100%;
+        height: 50px;
+        font-family: "Open Sans", sans-serif;
+        color: #FFFFFF;
+        font-size: 14px;
+        line-height: 65px; }
+        .contact .form__item input:focus + label {
+          top: -15px;
+          font-size: 11px;
+          color: #e79f3d; }
+        .contact .form__item input:focus {
+          border-bottom-color: #e79f3d; }
+        .contact .form__item input::placeholder {
+          color: transparent; }
+        .contact .form__item input:not(:placeholder-shown) + label {
+          top: -15px;
+          font-size: 11px; }
+      .contact .form__item--message {
+        flex-basis: 100%; }
+      .contact .form__item label {
+        position: absolute;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #e79f3d;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        top: 3px;
+        left: 40px;
+        transition: 0.2s ease-out all; }
+    .contact .form__submit {
+      width: 220px;
+      height: 60px;
+      background-color: #feb960;
+      color: #232323;
+      border: none;
+      transition: all 0.1s ease-in;
+      font-family: "Open Sans", sans-serif;
+      font-size: 17px;
+      margin: 0 auto 30px auto;
+      cursor: pointer; }
+      .contact .form__submit:hover {
+        background-color: #f5951a; }
 
 .expand {
   transform: translateX(-50%); }

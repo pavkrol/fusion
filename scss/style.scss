@@ -709,58 +709,72 @@ a, button {
     line-height: 65px;
     padding: 0 20%;
     text-align: center;
+    margin-bottom: 40px;
+  }
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   &__member {
+    position: relative;
     width: 285px;
     height: 315px;
-    position: relative;
     background-color: $back_dark;
   }
-  .member {
-    display: flex;
-    flex-direction: column;  
+  .member { 
     overflow: hidden;
-    align-items: center;
     &:hover {
-      //align-items: flex-start;
      .member__photo {
-       margin-top: 0;
-       width: 45px;
-       height: 45px;
+       width: 55px;
+       height: 55px;
+       transform: translate(-75px, -37.5px);
      }
-     .member__name {
-       height: 25px;
-       transform: rotate(90deg);
-       margin: 0;
-       
+     .member__wrapper {
+        transform: translate(-110px, -40px) rotate(90deg);   
      }
-     .member__position {
-       height: 25px;
-       transform: rotate(90deg);
-      
+     .member__description {
+       transform: translateX(75px);
+     }
+     &:before {
+       content: "";
+       display: block;
+       position: absolute;
+       width: 75px;
+       height: 75px;
+       border-left: 1px solid $sec_color;
+       border-top: 1px solid $sec_color;
      }
     }
     &__photo {
+      position: absolute;
+      top: 45px;
+      left: 82.5px;
       width: 120px;
       height: 120px;
       border-radius: 60px;
-      margin-top: 45px;
-      transition: all 0.4s ease-in;
+      transition: all 0.3s ease-in;
     }
-    &__name {
+    &__wrapper {
+      position: absolute;
+      width: 195px;
+      top: 185px;
+      left: 45px;
+      transition: all 0.3s ease-in;
+      text-align: center;
+    }
+    &__wrapper h4 {
       @include title;
-      height: 35px;
-      line-height: 35px;
-      margin-top: 20px;
+      height: 22.5px;
+      line-height: 22.5px;
     }
-    &__position {
+    &__wrapper h5 {
       color: $base_color;
       font-family: $sec_font;
       font-size: 13px;
-      height: 35px;
-      line-height: 35px;
+      height: 22.5px;
+      line-height: 22.5px;
       font-weight: 400;
-      text-align: center;
     }
     &__description {
       font-family: $sec_font;
@@ -770,7 +784,117 @@ a, button {
       position: absolute;
       width: 210px;
       height: 100%;
+      padding: 10px 10px 0 10px;
       transform: translateX(285px);
+      transition: all 0.4s ease-in;
+    }
+    &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(4), &:nth-of-type(5) {
+      border-right: 1px solid $back_bright;
+      border-bottom: 1px solid $back_bright;
+    }
+    &:nth-of-type(3), &:nth-of-type(6) {
+      border-bottom: 1px solid $back_bright;
+    }
+    &:nth-of-type(7) {
+      border-right: 1px solid $back_bright;
+    }
+  }
+}
+
+.contact {
+  min-height: 900px;
+  background-color: #343434;
+  padding: 125px 15% 110px 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__title {
+    @include title;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    &::before {
+      @include line;
+      width: 2px;
+      height: 125px;
+      top: -125px;
+      left: 50%;
+    }
+  }
+  &__subtitle {
+    @include subtitle(40px);
+    margin: 30px 0 90px 0;
+  }
+  &__form {
+    min-height: 500px;
+    max-width: 750px;
+  }
+  .form {
+    background-color: $back_dark;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 50px 20px;
+    box-shadow: 3px 4px 15px 0px rgba(0, 0, 0, 0.3); 
+    &__item {
+      flex-basis: 50%;
+      height: 60px;
+      padding: 0 40px;
+      margin-bottom: 70px;
+      position: relative;
+      input {
+        background: transparent;
+        border: none;
+        border-bottom: #5c5c5c 1px solid;
+        width: 100%;
+        height: 50px;
+        font-family: $sec_font;
+        color: $base_color;
+        font-size: 14px;
+        line-height: 65px;
+        &:focus + label {
+          top: -15px;
+          font-size: 11px;
+          color: $sec_color;
+        }
+        &:focus {
+          border-bottom-color: $sec_color;
+        }
+        &::placeholder {
+          color: transparent;
+        }
+        &:not(:placeholder-shown) + label {
+          top: -15px;
+          font-size: 11px;
+        }
+      }
+      &--message {
+        flex-basis: 100%;
+      }
+      label {
+        position: absolute;
+        @include title;
+        color: $base_color;
+        text-transform: uppercase;
+        top: 3px;
+        left: 40px;
+        transition: 0.2s ease-out all;
+      }
+    }
+    &__submit {
+      width: 220px;
+      height: 60px;
+      background-color: #feb960;
+      color: $dark_font;
+      border: none;
+      transition: all 0.1s ease-in;
+      font-family: $sec_font;
+      font-size: 17px;
+      margin: 0 auto 30px auto;
+      cursor: pointer;
+      &:hover {
+        background-color: #f5951a;
+      }
     }
   }
 }

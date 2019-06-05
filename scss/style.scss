@@ -899,12 +899,134 @@ a, button {
   }
 }
 
-
+.footer {
+  min-height: 230px;
+  padding: 0 calc(50% - 375px);
+  background-color: #343434;
+  display: flex;
+  justify-content: space-between;
+  &__logo {
+      display: block;
+      text-align: center;
+      line-height: 44px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid $sec_color;
+      font-family: $sec_font;
+      font-size: 22px;
+      transition: all 0.2s ease-in;
+      &:link, &:active, &:visited {
+        color: $sec_color;
+      }
+      &:hover {
+        color: $base_color;
+        border-color: $base_color;
+      }
+  }
+  &__address {
+    padding-left: 30px;
+    font-style: normal;
+    .address {
+      &__title {
+        @include title;
+        color: $base_color;
+        margin-bottom: 15px;
+      }
+      &__line {
+        @include paragraph;
+        &--link {
+          &:visited, &:active, &:link {
+            color: $desc_color;
+          }
+          &:hover {
+            color: $sec_color;
+          }
+        }
+      }
+      &__social {
+        list-style: none;
+        margin-top: 25px;
+        display: flex;
+        .social {
+          &__item {
+              display: inline-block;
+              width: 22px;
+              height: 22px;
+              line-height: 22px;
+              text-align: center;
+              margin-right: 15px;
+              border-radius: 50%;
+              background-color: $desc_color;
+              color: #343434;
+              font-size: 13px;
+              cursor: pointer;
+              transition: .1s all;
+              &:hover {
+                background-color: $sec_color;
+              }
+          }
+        }
+      }
+    }
+  }
+}
 
 .expand {
   transform: translateX(-50%);
 }
 
+@media (max-width: 800px) {
+  .team {
+    .member { 
+      &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4), &:nth-of-type(5), &:nth-of-type(6), &:nth-of-type(7) {
+        border: none;
+        border-bottom: 1px solid $back_bright;
+      }
+      
+      &:nth-of-type(8) {
+        border: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1230px) {
+  .team {
+    .member { 
+      &:nth-of-type(1), &:nth-of-type(3), &:nth-of-type(5) {
+        border: none;
+        border-right: 1px solid $back_bright;
+        border-bottom: 1px solid $back_bright;
+      }
+      &:nth-of-type(2), &:nth-of-type(4), &:nth-of-type(6) {
+        border: none;
+        border-bottom: 1px solid $back_bright;
+      }
+    }
+  }
+}
+
+@media (min-width: 1630px) {
+  .team {
+    .member { 
+      &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3) {
+        border: none;
+        border-right: 1px solid $back_bright;
+        border-bottom: 1px solid $back_bright;
+      }
+      &:nth-of-type(4) {
+        border: none;
+        border-bottom: 1px solid $back_bright;
+      }
+      &:nth-of-type(5), &:nth-of-type(6) {
+        border: none;
+        border-right: 1px solid $back_bright;
+      }
+
+    }
+  }
+} 
 
 
 

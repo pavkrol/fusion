@@ -5,7 +5,12 @@
   text-transform: uppercase;
   transition: all 0.2s ease-in;
   cursor: pointer;
-  &:link, &:active, &:visited {
+  @media (max-width: 600px) {
+    font-size: 11px;
+  }
+  &:link,
+  &:active,
+  &:visited {
     color: $base_color;
   }
   &:hover {
@@ -26,6 +31,9 @@
   font-weight: 500;
   text-transform: uppercase;
   cursor: pointer;
+  @media (max-width: 600px) {
+    font-size: 11px;
+  }
   &:hover {
     color: $sec_color;
   }
@@ -44,6 +52,9 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: $sec_color;
+  @media (max-width: 800px) {
+    font-size: 12px;
+  }
 }
 
 @mixin subtitle($size) {

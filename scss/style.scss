@@ -867,6 +867,12 @@ button {
   flex-direction: column;
   align-items: center;
   min-height: 1125px;
+  @media (max-width: 750px) {
+    padding: 125px 5% 110px 5%;
+  }
+  @media (max-width: 500px) {
+    padding: 125px 0 110px 0;
+  }
   &__title {
     @include title;
     height: 60px;
@@ -885,16 +891,33 @@ button {
     line-height: 65px;
     padding: 0 20%;
     text-align: center;
+    @media (max-width: 1100px) {
+      font-size: 32px;
+      padding: 0 5%;
+    }
+    @media (max-width: 800px) {
+      font-size: 24px;
+      line-height: 45px;
+    }
+    @media (max-width: 600px) {
+      font-size: 20px;
+    }
+    @media (max-width: 320px) {
+      font-size: 18px;
+      padding: 0;
+    }
   }
   &__logos {
     flex-basis: 200px;
     flex: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
+    flex-wrap: wrap;
     img {
       filter: brightness(0.6) sepia(1) hue-rotate(180deg) saturate(0);
+      margin: 15px 15px;
     }
     .visa {
       filter: brightness(1.8) sepia(1) hue-rotate(180deg) saturate(0);
@@ -905,8 +928,14 @@ button {
     width: 750px;
     background-color: $back_dark;
     box-shadow: 3px 4px 15px 0px rgba(0, 0, 0, 0.3);
-    @media (max-width: 320px) {
-      display: none;
+    @media (max-width: 900px) {
+      width: 600px;
+    }
+    @media (max-width: 750px) {
+      width: 500px;
+    }
+    @media (max-width: 500px) {
+      width: calc(100% - 30px);
     }
   }
   .slider {
@@ -919,6 +948,10 @@ button {
       position: relative;
       margin-top: 75px;
       padding: 40px 50px;
+      @media (max-width: 750px) {
+        font-size: 14px;
+        margin-top: 60px;
+      }
       &:before {
         content: "";
         display: block;
@@ -928,6 +961,12 @@ button {
         background-color: #d5d5d5;
         top: -75px;
         left: calc(50% - 37.5px);
+        @media (max-width: 750px) {
+          width: 60px;
+          height: 60px;
+          top: -60px;
+          left: calc(50% - 30px);
+        }
       }
     }
     &__author {
@@ -982,6 +1021,12 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 900px) {
+    padding: 125px 5% 110px 5%;
+  }
+  @media (max-width: 500px) {
+    padding: 125px 0 110px 0;
+  }
   &__title {
     @include title;
     height: 40px;
@@ -1001,6 +1046,21 @@ button {
     padding: 0 20%;
     text-align: center;
     margin-bottom: 40px;
+    @media (max-width: 1100px) {
+      font-size: 32px;
+      padding: 0 5%;
+    }
+    @media (max-width: 800px) {
+      font-size: 24px;
+      line-height: 45px;
+    }
+    @media (max-width: 600px) {
+      font-size: 20px;
+    }
+    @media (max-width: 320px) {
+      font-size: 18px;
+      padding: 0;
+    }
   }
   &__wrapper {
     display: flex;
@@ -1104,6 +1164,12 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 900px) {
+    padding: 125px 5% 110px 5%;
+  }
+  @media (max-width: 500px) {
+    padding: 125px 15px 110px 15px;
+  }
   &__title {
     @include title;
     height: 40px;
@@ -1120,6 +1186,21 @@ button {
   &__subtitle {
     @include subtitle(40px);
     margin: 30px 0 90px 0;
+    @media (max-width: 1100px) {
+      font-size: 32px;
+      padding: 0 5%;
+    }
+    @media (max-width: 800px) {
+      font-size: 24px;
+      line-height: 45px;
+    }
+    @media (max-width: 600px) {
+      font-size: 20px;
+    }
+    @media (max-width: 320px) {
+      font-size: 18px;
+      padding: 0;
+    }
   }
   &__form {
     min-height: 500px;
@@ -1134,12 +1215,22 @@ button {
   align-content: flex-start;
   padding: 50px 20px;
   box-shadow: 3px 4px 15px 0px rgba(0, 0, 0, 0.3);
+  @media (max-width: 500px) {
+    padding: 30px 10px;
+  }
   &__item {
     flex-basis: 50%;
     height: 60px;
     padding: 0 40px;
     margin-bottom: 70px;
     position: relative;
+    @media (max-width: 600px) {
+      flex-basis: 100%;
+      padding: 0 20px;
+    }
+    @media (max-width: 500px) {
+      padding: 0 10px;
+    }
     input {
       background: transparent;
       border: none;
@@ -1190,6 +1281,11 @@ button {
     font-size: 17px;
     margin: 0 auto 30px auto;
     cursor: pointer;
+    @media (max-width: 500px) {
+      width: 180px;
+      height: 50px;
+      font-size: 15px;
+    }
     &:hover {
       background-color: #f5951a;
     }
@@ -1202,8 +1298,10 @@ button {
   background-color: #343434;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 320px) {
-    display: none;
+  flex-wrap: wrap;
+  @media (max-width: 900px) {
+    padding: 0 10%;
+    justify-content: center;
   }
   &__logo {
     display: block;
@@ -1216,6 +1314,9 @@ button {
     font-family: $sec_font;
     font-size: 22px;
     transition: all 0.2s ease-in;
+    @media (max-width: 900px) {
+      display: none;
+    }
     &:link,
     &:active,
     &:visited {
@@ -1229,6 +1330,10 @@ button {
   &__address {
     padding-left: 30px;
     font-style: normal;
+    @media (max-width: 900px) {
+      padding-left: 0;
+      margin: 0 20px 50px 20px;
+    }
   }
 }
 
